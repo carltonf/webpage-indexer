@@ -1,0 +1,20 @@
+{
+  "name": "HTML Outline Indexer",
+  "short_name": "html-ol-indexer",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Generate an outline for the web page and allow user customize it",
+  "icons": {
+  },
+  "background": {
+    "scripts": ["scripts/background.js"]
+  },
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ],
+  "content_scripts": [],
+  "browser_action": {
+    "default_title": "ol-indexer"
+  }
+}
