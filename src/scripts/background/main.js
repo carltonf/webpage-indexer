@@ -1,34 +1,7 @@
-// global
-var bgGlobal = {
-  popup: {},
-  indexingTab: {} 
-};
-
-// programmatic injections
-var olIndexerScripts = [
-  {
-    "run_at": "document_end",
-    "js": [ "scripts/outliner.min.js",
-            "scripts/ol-indexer.js" ],
-  }
-];
-
-function injectScripts (tabId) {
-  olIndexerScripts.forEach(
-    scriptBlock =>
-      scriptBlock.js.forEach(
-        scriptFile => chrome.tabs.executeScript(tabId, {
-          runAt: scriptBlock.run_at,
-          file: scriptFile,
-        })
-      )
-  );
-}
-
 // Create new popup window
 function createOLIndexerWin () {
   var createData = {
-    url: "pages/ol-indexer.html",
+    url: "pages/popup-win.html",
     width: 350,
     height: 600,
     type: 'popup',
@@ -52,5 +25,5 @@ chrome.browserAction.onClicked.addListener(function browserActionOnClickCB (tab)
 
   bgGlobal.indexingTab.id = tab.id;
 
-  injectScripts(bgGlobal.indexingTab.id);
+  bgGlobal.injectScripts(bgGlobal.indexingTab.id);
 });

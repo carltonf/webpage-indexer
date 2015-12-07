@@ -1,0 +1,4 @@
+var bgGlobal = {
+  popup: {},
+  indexingTab: {} 
+};
