@@ -1,0 +1,27 @@
+{
+  "name": "webpage-indexer",
+  "version": "0.0.1",
+  "description": "Chrome extension for indexing",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carltonf/webpage-indexer.git"
+  },
+  "keywords": [
+    "chrome",
+    "indexing"
+  ],
+  "author": "Carl Xiong <xiongc05@gmail.com> (http://carltonf.github.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carltonf/webpage-indexer/issues"
+  },
+  "homepage": "https://github.com/carltonf/webpage-indexer#readme",
+  "dependencies": {
+    "h5o": "^0.11.3"
+  }
+}

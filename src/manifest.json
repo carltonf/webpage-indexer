@@ -1,9 +1,9 @@
 {
   "name": "HTML Outline Indexer",
   "short_name": "html-ol-indexer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 2,
-  "description": "Generate an outline for the web page and allow user customize it",
+  "description": "An interactive tool to generate an outline/index for a web page",
   "icons": {
   },
   "background": {

@@ -1,0 +1,5 @@
+* Before Development
+You need to set up the environment:
+- =npm install= for all necessary modules
+- =make= for necessary setup.
+- Load the extension =src= directory in chrome.
