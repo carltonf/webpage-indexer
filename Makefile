@@ -12,3 +12,10 @@ src/scripts/content/vendor/outliner.min.js: node_modules/h5o/dist/outliner.min.j
 devsync:
 	@echo "sync files among windows box..."
 	@unison -batch -fat ./src/ ~/Public/webpage-indexer/
+
+.PHONY: lint lint-fix
+lint:
+	@npm run lint
+
+lint-fix:
+	@npm run lint-fix

@@ -1,4 +1,4 @@
-var bgGlobal = {
+window.bgGlobal = {
   popup: {},
-  indexingTab: {} 
+  indexingTab: {}
 };
