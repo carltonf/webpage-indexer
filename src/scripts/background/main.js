@@ -27,3 +27,26 @@ chrome.browserAction.onClicked.addListener(function browserActionOnClickCB (tab)
 
   bgGlobal.injectScripts(bgGlobal.indexingTab.id);
 });
+
+function addSelectionAsIndex (info, tab) {
+  var indexName = info.selectionText;
+
+  chrome.tabs.sendMessage(tab.id, {
+    cmd: 'doc.addUserIndex',
+    name: indexName,
+  });
+}
+
+function createContextMenuEntry () {
+  var contextMenuEntryCreateProps = {
+    id: "addSelectionAsIndex",
+    type: 'normal',
+    title: 'Add "%s" as custom index.',
+    contexts: ['selection'],
+    onclick: addSelectionAsIndex,
+  };
+
+  chrome.contextMenus.create(contextMenuEntryCreateProps);
+}
+
+createContextMenuEntry();
