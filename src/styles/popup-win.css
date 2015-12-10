@@ -41,11 +41,11 @@ a {
   transition: all 0.15s ease-in;
 
   /* calculated by all buttons height and size */
-  min-width: 170px;
+  width: 135px;
 }
 .entry-edit-box-show {
 /*  display: block;*/
-  height: 30px;
+  height: 52px;
   padding: 5px;
   border-bottom: 1px solid steelblue;
 }
