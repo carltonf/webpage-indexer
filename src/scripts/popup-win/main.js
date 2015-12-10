@@ -31,7 +31,7 @@ function initOutline (outlineStr) {
   tweakH5OutlineHTML();
 }
 
-function setUpOutlineLink (tabId) {
+function setupOLEntryNav (tabId) {
   var outlineEl = document.querySelector('#outline');
   outlineEl.addEventListener('click', function outlineLinkClickHandler (e) {
     var lnk = e.target;
@@ -53,13 +53,51 @@ function setUpOutlineLink (tabId) {
   });
 }
 
+function setupOLEntryEdit () {
+  var outlineEl = document.querySelector('#outline');
+  // var entryEditBtns = document.querySelectorAll('.entry-edit-btn');
+  var entryTpl = document.querySelector('#tpl-outline-entry-edit-box');
+
+  outlineEl.addEventListener('click', function entryEditBtnClickHandler (e) {
+    var btn = e.target;
+    var entryContainer = null;
+    var entryEditBox = null;
+    if (!btn.classList.contains('entry-edit-btn')) {
+      return;
+    }
+
+    entryContainer = btn.parentNode;
+
+    if (entryContainer.querySelector('.entry-edit-box') === null) {
+      // avoids multiple insertions
+      entryContainer.appendChild(document.importNode(entryTpl.content, true));
+    }
+    entryEditBox = entryContainer.querySelector('.entry-edit-box');
+
+    setTimeout(function delayedShowEditBox () {
+      entryEditBox.classList.add('entry-edit-box-show');
+    }, 50);
+
+    e.stopPropagation();
+  });
+}
+
+document.addEventListener('click', function outBandClickHandler () {
+  var allShownEntryEditBoxes = document.querySelectorAll('.entry-edit-box-show');
+  var i = 0;
+  for (; i < allShownEntryEditBoxes.length; i++) {
+    allShownEntryEditBoxes[i].classList.remove('entry-edit-box-show');
+  }
+});
+
 // communicate with content scripts
 // all supported commands prefixed with 'popup.'
 chrome.runtime.onMessage.addListener(function popupwinContentMsgHandler (req, sender) {
   switch (req.cmd) {
   case 'popup.populateOutline':
     initOutline(req.outline);
-    setUpOutlineLink(sender.tab.id);
+    setupOLEntryNav(sender.tab.id);
+    setupOLEntryEdit();
     break;
   case 'popup.addUserIndex':
     const newIndexInfo = req.indexInfo;
