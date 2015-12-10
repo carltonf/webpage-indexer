@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+ol {
+  list-style-position: inside;
+  padding-left: 1.5em;
+  list-style-type: decimal;
+}
+
+a {
+  text-decoration: none;
+}
+
+.ol-entry-container {
+  width: 90%;
+}
+
+.ol-entry-container:hover {
+  outline: thin solid orange;
+}
+
+.entry-edit-btn {
+  display: none;
+  float: right;
+  cursor: pointer;
+}
+
+.ol-entry-container:hover .entry-edit-btn {
+  display: block;
+}
+
+/* dropdown menu for outline editting */
+li > div:hover .outline-entry-edit {
+/*  display: block;*/
+  height: 45px;
+  padding: 5px;
+}
+
+.outline-entry-edit {
+/*  border: 1px solid steelblue;*/
+  height: 0px;
+  padding: 0px 5px;
+/*  display: none;*/
+  overflow: hidden;
+  transition: all 0.15s ease-in;
+}
+
+.outline-entry-edit button {
+  display: block;
+  float: left;
+  height: 35px;
+  width: 35px;
+  font-size: 130%;
+  margin-left: 1px;
+}

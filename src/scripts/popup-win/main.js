@@ -1,8 +1,34 @@
 'use strict';
 
+function tweakH5OutlineHTML () {
+  var allEntries = document.querySelectorAll('li > a');
+  var i = 0;
+  var divContainer = null;
+  var editButton = null;
+  var entry = null;
+
+  for (i = 0; i < allEntries.length; i++) {
+    entry = allEntries[i];
+    divContainer = document.createElement('div');
+    divContainer.classList.add('ol-entry-container');
+
+    entry.parentNode.replaceChild(divContainer, entry);
+
+    divContainer.appendChild(entry);
+    editButton = document.createElement('span');
+    editButton.classList.add('entry-edit-btn');
+    editButton.textContent = '✎';
+    divContainer.appendChild(editButton);
+  }
+}
+
 function initOutline (outlineStr) {
   var outlineEl = document.querySelector('#outline');
   outlineEl.innerHTML = outlineStr;
+
+  // TODO we should really reimplement the outlining algorithm to allow more
+  // customization options and output formats.
+  tweakH5OutlineHTML();
 }
 
 function setUpOutlineLink (tabId) {
