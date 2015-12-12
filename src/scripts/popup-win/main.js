@@ -3,22 +3,18 @@
 function tweakH5OutlineHTML () {
   var allEntries = document.querySelectorAll('li > a');
   var i = 0;
-  var divContainer = null;
-  var editButton = null;
+  var entryContent = null;
+  var lnk = null;
   var entry = null;
+  var entryContentTpl = document.querySelector('#tpl-ol-entry-content');
 
   for (i = 0; i < allEntries.length; i++) {
-    entry = allEntries[i];
-    divContainer = document.createElement('div');
-    divContainer.classList.add('ol-entry-container');
+    lnk = allEntries[i];
+    entry = lnk.parentNode;
 
-    entry.parentNode.replaceChild(divContainer, entry);
-
-    divContainer.appendChild(entry);
-    editButton = document.createElement('span');
-    editButton.classList.add('entry-edit-btn');
-    editButton.textContent = '✎';
-    divContainer.appendChild(editButton);
+    entryContent = document.importNode(entryContentTpl.content, true);
+    entry.replaceChild(entryContent, lnk);
+    entry.querySelector('div').replaceChild(lnk, entry.querySelector('a'));
   }
 }
 

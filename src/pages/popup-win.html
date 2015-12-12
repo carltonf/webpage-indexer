@@ -7,12 +7,19 @@
 </head>
 <body>
   <article id="outline">Loading...</article>
-  
+
+  <template id="tpl-ol-entry-content">
+    <div class="ol-entry-content">
+      <a href="">Untitled Custom</a>
+      <span class="entry-edit-btn">✎</span>
+    </div>
+  </template>
+
   <template id="tpl-outline-entry-edit-box">
     <div class='entry-edit-box'>
-      <button class="entry-edit-action-btn edit-promote-entry"
+      <button class="entry-edit-action-btn edit-promote-entry" disabled
               title="Promote Entry">←</button>
-      <button class="entry-edit-action-btn edit-demote-entry"
+      <button class="entry-edit-action-btn edit-demote-entry" disabled
               title="Demote Entry">→</button>
       <button class="entry-edit-action-btn edit-promote-subtree"
               title="Promote Subtree">⇦</button>

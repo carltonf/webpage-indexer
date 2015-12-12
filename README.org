@@ -3,3 +3,20 @@ You need to set up the environment:
 - =npm install= for all necessary modules
 - =make= for necessary setup.
 - Load the extension =src= directory in chrome.
+
+
+* NOTES
+** Multi-select
+  http://www.patosai.com/projects/tree-multiselect
+
+** Simplistic Tree-widget in Vanilla JS
+  https://github.com/finom/vanillatree
+  Demo: http://output.jsbin.com/mesoju/1/
+  We can learn how to implement collapsible tree structure.
+
+** Best drag&drop
+  http://mbraak.github.io/jqTree/#demo
+
+** Integrate with MindMap like structure (d3.js!)
+  http://jaredforsyth.com/treed/
+  The edit part is also interesting.

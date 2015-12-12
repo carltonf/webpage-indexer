@@ -12,12 +12,12 @@ a {
   text-decoration: none;
 }
 
-.ol-entry-container {
+.ol-entry-content {
   width: 90%;
   overflow-x: hidden;
 }
 
-.ol-entry-container:hover {
+.ol-entry-content:hover {
   outline: thin solid orange;
 }
 
@@ -27,7 +27,7 @@ a {
   cursor: pointer;
 }
 
-.ol-entry-container:hover .entry-edit-btn {
+.ol-entry-content:hover .entry-edit-btn {
   display: block;
 }
 
